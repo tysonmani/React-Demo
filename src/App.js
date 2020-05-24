@@ -1,19 +1,33 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.css';
-import Login from './components/Login/Login';
-import Home from './components/Home/Home';
-import {BrowserRouter,Route, Redirect} from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 function App() {
+
+  const Login = lazy(() => import('./components/Login/Login'));
+  const Home = lazy(() => import('./components/Home/Home'));
+  const Response = lazy(() => import('./components/Response/Response'));
+  const Notification = lazy(() => import('./components/Notification/Notification'));
+
   return (
     <div>
-      <BrowserRouter>
-      <Route exact path="/">
-      <Redirect to="/login" />
-      </Route>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/home" component={Home} />
-      </BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/login" />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/home/:slug" component={Home} />
+            <Route exact path="/response">
+              <Response />
+            </Route>
+            <Route exact path="/notification" component={Notification} />
+          </Switch>
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }
