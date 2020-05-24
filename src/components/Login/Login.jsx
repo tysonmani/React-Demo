@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import "./Login.css";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
-import Button from '@material-ui/core/Button';
 
 function Login() {
 
@@ -49,7 +48,6 @@ function Login() {
                         <div className="login">
                             <h5 style={{ color: "#2867B2" }}><i className="fa fa-rocket"></i>Communi<span style={{ color: "black" }}>cation</span></h5>
                             <h6>Login</h6><br />
-                            <Button onClick={mySubmitHandler} color="secondary">Primary</Button><br />
                             <form>
                                 <input placeholder="Username" type="text" value={Username} onChange={e => {
                                     setUsername(e.target.value);
