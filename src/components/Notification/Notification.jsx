@@ -6,6 +6,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Notification() {
 
@@ -13,6 +15,8 @@ function Notification() {
     const [currency, setCurrency] = useState('EUR');
     const [value, setValue] = React.useState('Controlled');
     const [items, setItems] = React.useState([]);
+    const [startDate, setStartDate] = useState(new Date());
+
     const currencies = [
         {
             value: 'USD',
@@ -115,7 +119,8 @@ function Notification() {
                         </Fab>
                         <span style={{fontSize:"100px"}} className="material-icons">
                             accessibility
-                        </span>         
+                        </span><br/>
+                        <DatePicker minDate={new Date('05-23-2020')} selected={startDate} onChange={date => {console.log(date);setStartDate(date)}} />
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
                     </div>
