@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+      <CssBaseline />
       <Suspense fallback={<div>Loading...</div>}>
         <BrowserRouter>
           <Switch>

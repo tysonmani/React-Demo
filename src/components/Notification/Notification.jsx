@@ -3,6 +3,9 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 function Notification() {
 
@@ -18,12 +21,12 @@ function Notification() {
         },
         {
             value: 'EUR',
-            label: '€',
+            label: 'Common Dude',
             bool: false
         },
         {
             value: 'BTC',
-            label: '฿',
+            label: 'Whatsap Dude',
             bool: false
         },
         {
@@ -35,19 +38,19 @@ function Notification() {
 
     useEffect(() => {
         setItems(currencies);
-      },[]);
+    }, []);
 
     const handleChange1 = (event) => {
         setCurrency(event.target.value);
-        console.log(event.target.value,items);
+        console.log(event.target.value, items);
     };
 
-    const handleChange2 = (event,value) => {
+    const handleChange2 = (event, value) => {
         setValue(event.target.value);
-        console.log(event.target.value,value);
+        console.log(event.target.value, value);
     };
 
-    const handleChange3 = (event,index) => {
+    const handleChange3 = (event, index) => {
         let newArr = [...items];
         newArr[index].bool = event.target.checked;
         setItems(newArr);
@@ -91,18 +94,28 @@ function Notification() {
                             multiline
                             rowsMax={4}
                             value={value}
-                            onChange={e => handleChange2(e,value)}
+                            onChange={e => handleChange2(e, value)}
                             style={{ width: "30%" }}
-                        />
-                        {items.map((option,index) => (
+                        /><br />
+                        {items.map((option, index) => (
                             // <span>{option.value}</span>
-                        <Checkbox
-                            key={option.value}
-                            checked={option.bool}
-                            onChange={e => handleChange3(e,index)}
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
+                            <FormControlLabel
+                                key={option.value}
+                                control={<Checkbox
+                                    key={option.value}
+                                    checked={option.bool}
+                                    onChange={e => handleChange3(e, index)}
+                                    inputProps={{ 'aria-label': 'primary checkbox' }}
+                                />}
+                                label={option.label}
+                            />
                         ))}
+                        <Fab onClick={myButtonHandler} size="small" color="primary" aria-label="add">
+                            <AddIcon />
+                        </Fab>
+                        <span style={{fontSize:"100px"}} className="material-icons">
+                            accessibility
+                        </span>         
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
                     </div>
