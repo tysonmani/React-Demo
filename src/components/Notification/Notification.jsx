@@ -8,6 +8,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
 
 function Notification() {
 
@@ -16,6 +17,7 @@ function Notification() {
     const [value, setValue] = React.useState('Controlled');
     const [items, setItems] = React.useState([]);
     const [startDate, setStartDate] = useState(new Date());
+    const [isModalOpen, setisModalOpen] = useState(false);
 
     const currencies = [
         {
@@ -61,6 +63,10 @@ function Notification() {
         console.log(items);
     };
 
+    const toggleModal = () => {
+        setisModalOpen(!isModalOpen);
+    }
+
     const myButtonHandler = () => {
         alert("Cool");
     }
@@ -73,7 +79,10 @@ function Notification() {
                     <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2"></div>
                     <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <br /><br />
-                        <Button variant="outlined" onClick={myButtonHandler} color="secondary">Primary</Button><br /><br />
+                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Open modal
+                        </button>
+                        <Button onClick={toggleModal} variant="outlined" color="secondary">Primary</Button><br /><br />
                         <TextField value={Username} onChange={e => {
                             setUsername(e.target.value); console.log(Username, e.target.value);
                         }} style={{ width: "100%", marginTop: "20px" }} id="outlined-basic" label="Outlined" variant="outlined" />
@@ -117,15 +126,44 @@ function Notification() {
                         <Fab onClick={myButtonHandler} size="small" color="primary" aria-label="add">
                             <AddIcon />
                         </Fab>
-                        <span style={{fontSize:"100px"}} className="material-icons">
+                        <span style={{ fontSize: "100px" }} className="material-icons">
                             accessibility
-                        </span><br/>
-                        <DatePicker minDate={new Date('05-23-2020')} selected={startDate} onChange={date => {console.log(date);setStartDate(date)}} />
+                        </span><br />
+                        <DatePicker minDate={new Date('05-23-2020')} selected={startDate} onChange={date => { console.log(date); setStartDate(date) }} />
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
                     </div>
                 </div>
             </div>
+            <div className="modal" id="myModal">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+
+                        <div className="modal-header">
+                            <h4 className="modal-title">Modal Heading</h4>
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div className="modal-body">
+                            Modal body..
+                        </div>
+
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <Modal isOpen={isModalOpen} toggle={toggleModal}>
+                <ModalHeader toggle={toggleModal}>Login</ModalHeader>
+                <ModalBody>
+                    <p>CoolModal</p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button variant="outlined" color="secondary" onClick={toggleModal}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     )
 }
