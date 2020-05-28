@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import './App.css';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
@@ -9,12 +9,13 @@ function App() {
   const Home = lazy(() => import('./components/Home/Home'));
   const Response = lazy(() => import('./components/Response/Response'));
   const Notification = lazy(() => import('./components/Notification/Notification'));
+  const DrawerSideNavBar = lazy(() => import('./components/DrawerSideNavBar/DrawerSideNavBar'));
+  const NotFound = lazy(() => import('./components/NotFound/NotFound'));
 
   return (
     <div>
       <CssBaseline />
       <Suspense fallback={<div>Loading...</div>}>
-        <BrowserRouter>
           <Switch>
             <Route exact path="/">
               <Redirect to="/login" />
@@ -27,8 +28,13 @@ function App() {
               <Response />
             </Route>
             <Route exact path="/notification" component={Notification} />
+            <Route path="/drawer">
+              <DrawerSideNavBar>
+                <NotFound />
+              </DrawerSideNavBar>
+            </Route>
+            <Route component={NotFound} />
           </Switch>
-        </BrowserRouter>
       </Suspense>
     </div>
   );
