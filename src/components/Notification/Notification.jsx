@@ -80,35 +80,183 @@ function Notification() {
         "classSchedule": {
             "Monday": [
                 {
-                    "id": "5ee5e372fa2bfb0004f28d4f",
-                    "instituteId": "5ee5e1aefa2bfb0004f28d48",
-                    "classId": "5ee5e2b6fa2bfb0004f28d4a",
-                    "sectionId": "0af22a49-df44-4e9d-916e-3b8f2afbe699",
+                    "id": "5ee4c74c82dc0d0004f6f8f5",
+                    "instituteId": "5ee32f58d132be0004004335",
+                    "classId": "5ee32f7cd132be0004004336",
+                    "sectionId": "42e8bc38-d46d-4708-92c9-21fa26df2913",
                     "day": "Monday",
-                    "subjectId": "5ee5e34ffa2bfb0004f28d4d",
-                    "startTime": "02:14 pm",
-                    "endTime": "02:14 pm",
-                    "displayName": "Social Manners",
-                    "teacherId": "5ee5e208fa2bfb0004f28d49",
+                    "subjectId": "5ee483acf3c1a70004fe81bf",
+                    "startTime": "06:01 am",
+                    "endTime": "06:01 am",
+                    "displayName": "Science People",
+                    "teacherId": "5ee46c74f3c1a70004fe81bc",
                     "subjectDTO": {
-                        "id": "5ee5e34ffa2bfb0004f28d4d",
-                        "name": "Social",
-                        "classId": "5ee5e2b6fa2bfb0004f28d4a",
+                        "id": "5ee483acf3c1a70004fe81bf",
+                        "name": "Android",
+                        "classId": "5ee32f7cd132be0004004336",
                         "type": null,
                         "active": null
                     },
                     "teacherDTO": {
-                        "id": "5ee5e208fa2bfb0004f28d49",
+                        "id": "5ee46c74f3c1a70004fe81bc",
+                        "registrationNumber": 1002,
+                        "autoGenerate": true,
+                        "instituteId": "5ee32f58d132be0004004335",
+                        "firstName": "Carnival",
+                        "lastName": "George",
+                        "gender": "Male",
+                        "dateOfBirth": "2011-06-16",
+                        "mobileNumber": "4564566543",
+                        "address": "USA",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/1899fffe-66cd-4c1a-a16e-5d2eb9f1e6fe-2020-06-13/9015923-14315409.jpg",
+                        "active": true,
+                        "type": null
+                    },
+                    "type": null,
+                    "active": true
+                },
+                {
+                    "id": "5ee50d70b3d7000004081cf2",
+                    "instituteId": "5ee32f58d132be0004004335",
+                    "classId": "5ee32f7cd132be0004004336",
+                    "sectionId": "42e8bc38-d46d-4708-92c9-21fa26df2913",
+                    "day": "Monday",
+                    "subjectId": "5ee50d1fb3d7000004081cf0",
+                    "startTime": "11:01 pm",
+                    "endTime": "11:01 pm",
+                    "displayName": "Maths Trigonometry",
+                    "teacherId": "5ee46a99f3c1a70004fe81bb",
+                    "subjectDTO": {
+                        "id": "5ee50d1fb3d7000004081cf0",
+                        "name": "Maths",
+                        "classId": "5ee32f7cd132be0004004336",
+                        "type": null,
+                        "active": null
+                    },
+                    "teacherDTO": {
+                        "id": "5ee46a99f3c1a70004fe81bb",
                         "registrationNumber": 1001,
                         "autoGenerate": true,
-                        "instituteId": "5ee5e1aefa2bfb0004f28d48",
-                        "firstName": "Dheeraj",
-                        "lastName": "Khan",
+                        "instituteId": "5ee32f58d132be0004004335",
+                        "firstName": "Holo",
+                        "lastName": "Mamy",
+                        "gender": "Other",
+                        "dateOfBirth": "2020-04-01",
+                        "mobileNumber": "9431431433",
+                        "address": "Antartica",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/cbccf588-8a86-41c5-a09d-f82a4508a0c4-2020-06-13/1*Lnd0nm_wldRHmmMcK54OkA.jpeg",
+                        "active": true,
+                        "type": null
+                    },
+                    "type": null,
+                    "active": true
+                },
+                {
+                    "id": "5ee50dc3b3d7000004081cf4",
+                    "instituteId": "5ee32f58d132be0004004335",
+                    "classId": "5ee32f7cd132be0004004336",
+                    "sectionId": "42e8bc38-d46d-4708-92c9-21fa26df2913",
+                    "day": "Monday",
+                    "subjectId": "5ee50db3b3d7000004081cf3",
+                    "startTime": "11:02 am",
+                    "endTime": "11:02 am",
+                    "displayName": "Physics Fluids",
+                    "teacherId": "5ee46c74f3c1a70004fe81bc",
+                    "subjectDTO": {
+                        "id": "5ee50db3b3d7000004081cf3",
+                        "name": "Physics",
+                        "classId": "5ee32f7cd132be0004004336",
+                        "type": null,
+                        "active": null
+                    },
+                    "teacherDTO": {
+                        "id": "5ee46c74f3c1a70004fe81bc",
+                        "registrationNumber": 1002,
+                        "autoGenerate": true,
+                        "instituteId": "5ee32f58d132be0004004335",
+                        "firstName": "Carnival",
+                        "lastName": "George",
                         "gender": "Male",
-                        "dateOfBirth": "2020-06-02",
-                        "mobileNumber": "8908908907",
-                        "address": "Hosur",
-                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/be97eeca-29cf-4ea0-b701-a1b584be204f-2020-06-14/1*Lnd0nm_wldRHmmMcK54OkA.jpeg",
+                        "dateOfBirth": "2011-06-16",
+                        "mobileNumber": "4564566543",
+                        "address": "USA",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/1899fffe-66cd-4c1a-a16e-5d2eb9f1e6fe-2020-06-13/9015923-14315409.jpg",
+                        "active": true,
+                        "type": null
+                    },
+                    "type": null,
+                    "active": true
+                }
+            ],
+            "Friday": [
+                {
+                    "id": "5ee4f4017be99a000476b3ea",
+                    "instituteId": "5ee32f58d132be0004004335",
+                    "classId": "5ee32f7cd132be0004004336",
+                    "sectionId": "42e8bc38-d46d-4708-92c9-21fa26df2913",
+                    "day": "Friday",
+                    "subjectId": "5ee4fe517be99a000476b3eb",
+                    "startTime": "02:15 am",
+                    "endTime": "02:15 am",
+                    "displayName": "Division Maths",
+                    "teacherId": "5ee46a99f3c1a70004fe81bb",
+                    "subjectDTO": {
+                        "id": "5ee4fe517be99a000476b3eb",
+                        "name": "Good-Subject",
+                        "classId": "5ee32f7cd132be0004004336",
+                        "type": null,
+                        "active": null
+                    },
+                    "teacherDTO": {
+                        "id": "5ee46a99f3c1a70004fe81bb",
+                        "registrationNumber": 1001,
+                        "autoGenerate": true,
+                        "instituteId": "5ee32f58d132be0004004335",
+                        "firstName": "Holo",
+                        "lastName": "Mamy",
+                        "gender": "Other",
+                        "dateOfBirth": "2020-04-01",
+                        "mobileNumber": "9431431433",
+                        "address": "Antartica",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/cbccf588-8a86-41c5-a09d-f82a4508a0c4-2020-06-13/1*Lnd0nm_wldRHmmMcK54OkA.jpeg",
+                        "active": true,
+                        "type": null
+                    },
+                    "type": null,
+                    "active": true
+                }
+            ],
+            "Saturday": [
+                {
+                    "id": "5ee50abfb3d7000004081cef",
+                    "instituteId": "5ee32f58d132be0004004335",
+                    "classId": "5ee32f7cd132be0004004336",
+                    "sectionId": "42e8bc38-d46d-4708-92c9-21fa26df2913",
+                    "day": "Saturday",
+                    "subjectId": "5ee50aa9b3d7000004081cee",
+                    "startTime": "10:49 pm",
+                    "endTime": "10:49 pm",
+                    "displayName": "Economics Guys",
+                    "teacherId": "5ee46a99f3c1a70004fe81bb",
+                    "subjectDTO": {
+                        "id": "5ee50aa9b3d7000004081cee",
+                        "name": "Economics",
+                        "classId": "5ee32f7cd132be0004004336",
+                        "type": null,
+                        "active": null
+                    },
+                    "teacherDTO": {
+                        "id": "5ee46a99f3c1a70004fe81bb",
+                        "registrationNumber": 1001,
+                        "autoGenerate": true,
+                        "instituteId": "5ee32f58d132be0004004335",
+                        "firstName": "Holo",
+                        "lastName": "Mamy",
+                        "gender": "Other",
+                        "dateOfBirth": "2020-04-01",
+                        "mobileNumber": "9431431433",
+                        "address": "Antartica",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/cbccf588-8a86-41c5-a09d-f82a4508a0c4-2020-06-13/1*Lnd0nm_wldRHmmMcK54OkA.jpeg",
                         "active": true,
                         "type": null
                     },
@@ -117,6 +265,7 @@ function Notification() {
                 }
             ]
         }
+
     }
 
     const workingDays = [
@@ -290,69 +439,67 @@ function Notification() {
                     </div>
                 </div>
             </div>
-            <div className={classes.root}>
-            <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2"></div>
-                    <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                <AppBar position="static" color="default">
-                    <Tabs
-                        value={value123}
-                        onChange={handleChange}
-                        indicatorColor="primary"
-                        textColor="primary"
-                        variant="scrollable"
-                        scrollButtons="auto"
-                        aria-label="scrollable auto tabs example"
-                    >
-                        {
-                            workingDays.map((option, index) => (
-                                <Tab key={index} label={option.name} {...a11yProps(index)} />
-                            ))
-                        }
-                    </Tabs>
-                </AppBar>
-                {
-                    workingDays.map((option, index) => (
-                        <TabPanel key={index} value={value123} index={index}>
+            {/* <div className={classes.root}> */}
+            <AppBar position="static" color="default">
+                <Tabs
+                    value={value123}
+                    onChange={handleChange}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    aria-label="scrollable auto tabs example"
+                >
+                    {
+                        workingDays.map((option, index) => (
+                            <Tab key={index} label={option.name} {...a11yProps(index)} />
+                        ))
+                    }
+                </Tabs>
+            </AppBar>
+            {
+                workingDays.map((option, index) => (
+                    <TabPanel key={index} value={value123} index={index}>
+                        <div className="row">
                             {
                                 option.name,
                                 periodDayTimetable === null ? "No Data Available" :
                                     periodDayTimetable.map((data, index) => (
                                         <div key={data.id} className="col-xs-12 col-sm-12 col-md-12 col-lg-6"><br /><br />
-                                        <div id="box" className="card" style={{ width: "100%", borderRadius: "12px" }}>
-                                            <div className="card-body">
-                                                <div className="row">
-                                                    <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
-                                                        <Avatar name={data.displayName} size="35" round={true} />
+                                            <div id="box" className="card" style={{ width: "100%", borderRadius: "12px" }}>
+                                                <div className="card-body">
+                                                    <div className="row">
+                                                        <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                                                            <Avatar name={data.displayName} size="35" round={true} />
+                                                        </div>
+                                                        <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                                            <h5 style={{ marginTop: "4px" }} className="card-title">{data.displayName}</h5>
+                                                        </div>
+                                                        <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                                            <Fab color="secondary" size="small" aria-label="edit">
+                                                                <EditIcon />
+                                                            </Fab>
+                                                        </div>
                                                     </div>
-                                                    <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                                                        <h5 style={{ marginTop: "4px" }} className="card-title">{data.displayName}</h5>
-                                                    </div>
-                                                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                                                        <Fab color="secondary" size="small" aria-label="edit">
-                                                            <EditIcon />
-                                                        </Fab>
+                                                    <div className="row">
+                                                        <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1"></div>
+                                                        <div className="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                                                            <h5>Subject Name : {data.subjectDTO.name}</h5>
+                                                            <h5>Teacher Name : {data.teacherDTO.firstName + " " + data.teacherDTO.lastName}</h5>
+                                                            <h5>Timings : {data.startTime + "-" + data.endTime}</h5>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="row">
-                                                    <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1"></div>
-                                                    <div className="col-xs-12 col-sm-12 col-md-11 col-lg-11">
-                                                        <h5>Subject Name : {data.subjectDTO.name}</h5>
-                                                        <h5>Teacher Name : {data.teacherDTO.firstName + " " + data.teacherDTO.lastName}</h5>
-                                                        <h5>Timings : {data.startTime + "-" + data.endTime}</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><br />
-                                    </div>
+                                            </div><br />
+                                        </div>
                                     ))}
+                        </div>
 
-                        </TabPanel>
-                    ))
-                }
-                </div>
-                </div>
-            </div>
+                    </TabPanel>
+                ))
+            }
+
+            {/* </div> */}
 
             <div className="modal" id="myModal">
                 <div className="modal-dialog">
