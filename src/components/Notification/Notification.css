@@ -1,0 +1,23 @@
+#box:hover
+{
+    transform: translateY(-2px);
+    box-shadow: 10px 10px 50px grey;
+}
+.button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 150%;
+    cursor: pointer;
+    border-radius: 5px;
+    width:100%;
+}
+.button1 {
+    background-color: #B99E01; 
+    color: white; 
+    border: 2px solid #A4A4A4;
+}

@@ -6,6 +6,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
@@ -16,6 +17,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Avatar from 'react-avatar';
+import "./Notification.css";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -30,7 +33,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography variant="h5" component="h5">{children}</Typography>
                 </Box>
             )}
         </div>
@@ -70,8 +73,104 @@ function Notification() {
     const classes = useStyles();
     const [value123, setValue123] = React.useState(0);
 
+    const [periodDayTimetable, setperiodDayTimetable] = useState(null);
+
+    const timeTableData = {
+
+        "classSchedule": {
+            "Monday": [
+                {
+                    "id": "5ee5e372fa2bfb0004f28d4f",
+                    "instituteId": "5ee5e1aefa2bfb0004f28d48",
+                    "classId": "5ee5e2b6fa2bfb0004f28d4a",
+                    "sectionId": "0af22a49-df44-4e9d-916e-3b8f2afbe699",
+                    "day": "Monday",
+                    "subjectId": "5ee5e34ffa2bfb0004f28d4d",
+                    "startTime": "02:14 pm",
+                    "endTime": "02:14 pm",
+                    "displayName": "Social Manners",
+                    "teacherId": "5ee5e208fa2bfb0004f28d49",
+                    "subjectDTO": {
+                        "id": "5ee5e34ffa2bfb0004f28d4d",
+                        "name": "Social",
+                        "classId": "5ee5e2b6fa2bfb0004f28d4a",
+                        "type": null,
+                        "active": null
+                    },
+                    "teacherDTO": {
+                        "id": "5ee5e208fa2bfb0004f28d49",
+                        "registrationNumber": 1001,
+                        "autoGenerate": true,
+                        "instituteId": "5ee5e1aefa2bfb0004f28d48",
+                        "firstName": "Dheeraj",
+                        "lastName": "Khan",
+                        "gender": "Male",
+                        "dateOfBirth": "2020-06-02",
+                        "mobileNumber": "8908908907",
+                        "address": "Hosur",
+                        "imageUrl": "https://institute-managment.s3.ap-south-1.amazonaws.com/institute-managment/TEACHER/image/jpeg/be97eeca-29cf-4ea0-b701-a1b584be204f-2020-06-14/1*Lnd0nm_wldRHmmMcK54OkA.jpeg",
+                        "active": true,
+                        "type": null
+                    },
+                    "type": null,
+                    "active": true
+                }
+            ]
+        }
+    }
+
+    const workingDays = [
+        {
+            id: 1,
+            name: 'Monday'
+        },
+        {
+            id: 2,
+            name: 'Tuesday'
+        },
+        {
+            id: 3,
+            name: 'Wednesday'
+        },
+        {
+            id: 4,
+            name: 'Thursday'
+        },
+        {
+            id: 5,
+            name: 'Friday'
+        },
+        {
+            id: 6,
+            name: 'Saturday'
+        },
+        {
+            id: 7,
+            name: 'Sunday'
+        }
+    ];
+
     const handleChange = (event, newValue) => {
+        console.log(newValue);
         setValue123(newValue);
+        getPeriodDay(workingDays[newValue].name);
+    };
+
+    const getPeriodDay = (day) => {
+        console.log(day);
+        var exist = true;
+        Object.entries(timeTableData.classSchedule).map(([key, value]) => {
+            if (key === day) {
+                console.log(key, value, timeTableData.classSchedule[key]);
+                setperiodDayTimetable(timeTableData.classSchedule[key]);
+                exist = false;
+                return true;
+            }
+        }
+        );
+        if (exist === true) {
+            setperiodDayTimetable(null);
+        }
     };
 
     const currencies = [
@@ -99,6 +198,7 @@ function Notification() {
 
     useEffect(() => {
         setItems(currencies);
+        getPeriodDay("Monday");
     }, []);
 
     const handleChange1 = (event) => {
@@ -191,6 +291,9 @@ function Notification() {
                 </div>
             </div>
             <div className={classes.root}>
+            <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2"></div>
+                    <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                 <AppBar position="static" color="default">
                     <Tabs
                         value={value123}
@@ -201,37 +304,56 @@ function Notification() {
                         scrollButtons="auto"
                         aria-label="scrollable auto tabs example"
                     >
-                        <Tab label="Item One" {...a11yProps(0)} />
-                        <Tab label="Item Two" {...a11yProps(1)} />
-                        <Tab label="Item Three" {...a11yProps(2)} />
-                        <Tab label="Item Four" {...a11yProps(3)} />
-                        <Tab label="Item Five" {...a11yProps(4)} />
-                        <Tab label="Item Six" {...a11yProps(5)} />
-                        <Tab label="Item Seven" {...a11yProps(6)} />
+                        {
+                            workingDays.map((option, index) => (
+                                <Tab key={index} label={option.name} {...a11yProps(index)} />
+                            ))
+                        }
                     </Tabs>
                 </AppBar>
-                <TabPanel value={value123} index={0}>
-                    Item One
-      </TabPanel>
-                <TabPanel value={value123} index={1}>
-                    Item Two
-      </TabPanel>
-                <TabPanel value={value123} index={2}>
-                    Item Three
-      </TabPanel>
-                <TabPanel value={value123} index={3}>
-                    Item Four
-      </TabPanel>
-                <TabPanel value={value123} index={4}>
-                    Item Five
-      </TabPanel>
-                <TabPanel value={value123} index={5}>
-                    Item Six
-      </TabPanel>
-                <TabPanel value={value123} index={6}>
-                    Item Seven
-      </TabPanel>
+                {
+                    workingDays.map((option, index) => (
+                        <TabPanel key={index} value={value123} index={index}>
+                            {
+                                option.name,
+                                periodDayTimetable === null ? "No Data Available" :
+                                    periodDayTimetable.map((data, index) => (
+                                        <div key={data.id} className="col-xs-12 col-sm-12 col-md-12 col-lg-6"><br /><br />
+                                        <div id="box" className="card" style={{ width: "100%", borderRadius: "12px" }}>
+                                            <div className="card-body">
+                                                <div className="row">
+                                                    <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
+                                                        <Avatar name={data.displayName} size="35" round={true} />
+                                                    </div>
+                                                    <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                                        <h5 style={{ marginTop: "4px" }} className="card-title">{data.displayName}</h5>
+                                                    </div>
+                                                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                                        <Fab color="secondary" size="small" aria-label="edit">
+                                                            <EditIcon />
+                                                        </Fab>
+                                                    </div>
+                                                </div>
+                                                <div className="row">
+                                                    <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1"></div>
+                                                    <div className="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                                                        <h5>Subject Name : {data.subjectDTO.name}</h5>
+                                                        <h5>Teacher Name : {data.teacherDTO.firstName + " " + data.teacherDTO.lastName}</h5>
+                                                        <h5>Timings : {data.startTime + "-" + data.endTime}</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br />
+                                    </div>
+                                    ))}
+
+                        </TabPanel>
+                    ))
+                }
+                </div>
+                </div>
             </div>
+
             <div className="modal" id="myModal">
                 <div className="modal-dialog">
                     <div className="modal-content">
