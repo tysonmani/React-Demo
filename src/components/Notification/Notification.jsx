@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Avatar from 'react-avatar';
 import "./Notification.css";
+import addNotification from 'react-push-notification';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -375,6 +376,21 @@ function Notification() {
         alert("Cool");
     }
 
+    const buttonClick = () => {
+        addNotification({
+            title: 'Warning',
+            subtitle: 'This is a subtitle',
+            message: 'This is a very long message',
+            theme: 'darkblue',
+            native: true, // when using native, your OS will handle theming.
+            duration: 7000, //optional, default: 5000,
+            backgroundTop: 'green', //optional, background color of top container.
+            backgroundBottom: 'darkgreen', //optional, background color of bottom container.
+            colorTop: 'green', //optional, font color of top container.
+            colorBottom: 'darkgreen',
+        });
+    }
+
     return (
         <div>
             <p>Notification</p>
@@ -438,6 +454,7 @@ function Notification() {
                     <div className="col-xs-12 col-sm-12 col-md-1 col-lg-1">
                     </div>
                 </div>
+                <Button onClick={buttonClick} variant="outlined" color="secondary">Notification</Button>
             </div>
             {/* <div className={classes.root}> */}
             <AppBar position="static" color="default">
