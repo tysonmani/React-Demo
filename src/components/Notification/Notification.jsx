@@ -24,6 +24,7 @@ import logo from './animation_500_kc94z28r.gif';
 import * as animationData1 from './26327-growing-red-flower.json'
 import * as animationData2 from './26337-jellyfish-kaiping.json'
 import Lottie from 'react-lottie';
+import ReactPlayer from 'react-player/lazy'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -437,6 +438,7 @@ function Notification() {
                     <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <br /><br />
                         {/* <img src={logo} alt="loading..." /> */}
+                        <ReactPlayer controls url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
                         <Lottie
                             options={defaultOptions2}
                             height="100px"
