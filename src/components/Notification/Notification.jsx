@@ -20,6 +20,10 @@ import Box from '@material-ui/core/Box';
 import Avatar from 'react-avatar';
 import "./Notification.css";
 import addNotification from 'react-push-notification';
+import logo from './animation_500_kc94z28r.gif';
+import * as animationData1 from './26327-growing-red-flower.json'
+import * as animationData2 from './26337-jellyfish-kaiping.json'
+import Lottie from 'react-lottie';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -383,12 +387,40 @@ function Notification() {
             message: 'This is a very long message',
             theme: 'darkblue',
             native: true, // when using native, your OS will handle theming.
-            duration: 7000, //optional, default: 5000,
+            duration: 3000, //optional, default: 5000,
             backgroundTop: 'green', //optional, background color of top container.
             backgroundBottom: 'darkgreen', //optional, background color of bottom container.
             colorTop: 'green', //optional, font color of top container.
-            colorBottom: 'darkgreen',
+            colorBottom: 'darkgreen'
         });
+    }
+
+    const defaultOptions1 = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData1.default,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+    
+    const defaultOptions2 = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData2.default,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+    
+    const styles = {
+        checkAnimation: {
+    
+            width: '100px',
+            height: '100px',
+            marginLeft: '-5px',
+            marginRight: '0px'
+        },
     }
 
     return (
@@ -396,9 +428,20 @@ function Notification() {
             <p>Notification</p>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2"></div>
+                    <div className="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                        <Lottie
+                            style={styles.checkAnimation}
+                            options={defaultOptions1}
+                        />
+                    </div>
                     <div className="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <br /><br />
+                        {/* <img src={logo} alt="loading..." /> */}
+                        <Lottie
+                            options={defaultOptions2}
+                            height="100px"
+                            width="100px"
+                        />
                         <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
                             Open modal
                         </button>
