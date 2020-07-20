@@ -24,7 +24,7 @@ import logo from './animation_500_kc94z28r.gif';
 import * as animationData1 from './26327-growing-red-flower.json'
 import * as animationData2 from './26337-jellyfish-kaiping.json'
 import Lottie from 'react-lottie';
-import ReactPlayer from 'react-player/lazy'
+import ReactPlayer from 'react-player/lazy';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -404,7 +404,7 @@ function Notification() {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
-    
+
     const defaultOptions2 = {
         loop: true,
         autoplay: true,
@@ -413,10 +413,10 @@ function Notification() {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
-    
+
     const styles = {
         checkAnimation: {
-    
+
             width: '100px',
             height: '100px',
             marginLeft: '-5px',
@@ -592,6 +592,7 @@ function Notification() {
                     <Button variant="outlined" color="secondary" onClick={toggleModal}>Cancel</Button>
                 </ModalFooter>
             </Modal>
+
         </div>
     )
 }
