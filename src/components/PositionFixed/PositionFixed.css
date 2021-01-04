@@ -1,0 +1,9 @@
+.leftImage {
+    width: 70%;
+    height: 100vh;
+}
+.rightImage {
+    width: 70%;
+    height: 100vh;
+    float: right;
+}

@@ -9,6 +9,8 @@ function App() {
   const Home = lazy(() => import('./components/Home/Home'));
   const Response = lazy(() => import('./components/Response/Response'));
   const Notification = lazy(() => import('./components/Notification/Notification'));
+  const BackgroundFixed = lazy(() => import('./components/BackgroundFixed/BackgroundFixed'));
+  const PositionFixed = lazy(() => import('./components/PositionFixed/PositionFixed'));
   const DrawerSideNavBar = lazy(() => import('./components/DrawerSideNavBar/DrawerSideNavBar'));
   const NotFound = lazy(() => import('./components/NotFound/NotFound'));
 
@@ -28,6 +30,8 @@ function App() {
               <Response />
             </Route>
             <Route exact path="/notification" component={Notification} />
+            <Route exact path="/backgroundFixed" component={BackgroundFixed} />
+            <Route exact path="/positionFixed" component={PositionFixed} />
             <Route path="/drawer">
               <DrawerSideNavBar>
                 <NotFound />

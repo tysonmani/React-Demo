@@ -1,0 +1,8 @@
+.parallax {
+    background-image: linear-gradient(
+        90deg,
+        #5722ff 0,
+        #8103ff 51%,
+        #5722ff 100%
+      );
+}
